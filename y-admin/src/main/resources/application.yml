@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: @spring.active@
+  datasource:
+    db1:
+      jdbc-url: jdbc:mysql://192.168.10.189:3306/gjj?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useOldAliasMetadataBehavior=true
+      username: gdca
+      password: gdca1234
+
+mybatis-plus:
+  mapper-locations: classpath*:y/y/yadmin/**/*.xml
+  global-config:
+    refresh-mapper: true
+    db-column-underline: false
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+  configuration:
+    map-underscore-to-camel-case: false
+    cache-enabled: true
+    lazy-loading-enabled: true
+    multiple-result-sets-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
