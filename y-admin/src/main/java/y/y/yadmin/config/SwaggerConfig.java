@@ -32,7 +32,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-/*@ConditionalOnProperty(prefix = "guns", name = "swagger-open", havingValue = "true")*/
+/*@ConditionalOnProperty(prefix = "config", name = "swagger-open", havingValue = "true")*/
 public class SwaggerConfig {
 
     @Bean
