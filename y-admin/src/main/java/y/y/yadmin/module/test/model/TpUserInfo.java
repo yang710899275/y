@@ -2,9 +2,13 @@ package y.y.yadmin.module.test.model;
 
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
 
 import java.io.Serializable;
+
+import static com.baomidou.mybatisplus.enums.IdType.INPUT;
 
 /**
  * <p>
@@ -19,6 +23,7 @@ public class TpUserInfo extends Model<TpUserInfo> {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(type = IdType.INPUT)
     private String id;
     /**
      * 受理单号

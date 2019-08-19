@@ -1,3 +1,7 @@
+y:
+  muti-datasource:
+    open: true   #多数据源开关
+
 spring:
   profiles:
     active: @spring.active@
@@ -7,6 +11,17 @@ spring:
       url: jdbc:mysql://192.168.10.93:3306/gjj?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useOldAliasMetadataBehavior=true
       username: gdca
       password: gdca1234
-
+      dataSourceName: gjj
+---
+spring:
+  datasource:
+    db2:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.10.93:3306/gdca_mc?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useOldAliasMetadataBehavior=true
+      username: gdca
+      password: gdca1234
+      dataSourceName: gdca_mc
 mybatis-plus:
   mapper-locations: classpath*:y/y/yadmin/**/*.xml
+
+---

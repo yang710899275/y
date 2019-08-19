@@ -18,16 +18,10 @@ import javax.sql.DataSource;
  * 单数据源配置
  */
 @Configuration
-//@ConditionalOnProperty(prefix = "guns.muti-datasource", name = "open", havingValue = "false", matchIfMissing = true)*//*
+@ConditionalOnProperty(prefix = "y.muti-datasource", name = "open", havingValue = "false", matchIfMissing = true)
 @EnableTransactionManagement
 @MapperScan(basePackages = {"y.y.yadmin.module.*.dao"})
 public class SingleDataSourceConfig {
-
-    @Bean
-    @ConfigurationProperties("spring.datasource.db1")
-    public DruidProperties druidProperties(){
-        return new DruidProperties();
-    }
 
     @Bean
     public DruidDataSource dataSource(DruidProperties druidProperties){
@@ -35,22 +29,5 @@ public class SingleDataSourceConfig {
         druidProperties.config(dataSource);
         return dataSource;
     }
-
-   /**
-     * mybatis-plus分页插件
-     */
-    @Bean
-    public PaginationInterceptor paginationInterceptor() {
-        return new PaginationInterceptor();
-    }
-
-    /**
-     * 乐观锁mybatis插件
-     */
-    @Bean
-    public OptimisticLockerInterceptor optimisticLockerInterceptor() {
-        return new OptimisticLockerInterceptor();
-    }
-
 }
 
