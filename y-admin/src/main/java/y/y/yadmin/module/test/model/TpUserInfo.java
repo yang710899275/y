@@ -10,20 +10,12 @@ import java.io.Serializable;
 
 import static com.baomidou.mybatisplus.enums.IdType.INPUT;
 
-/**
- * <p>
- * 用户信息实例表
- * </p>
- *
- * @author lmc
- * @since 2019-07-18
- */
 @TableName("tp_user_info")
 public class TpUserInfo extends Model<TpUserInfo> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(type = IdType.INPUT)
+    @TableId(type = IdType.ID_WORKER_STR)
     private String id;
     /**
      * 受理单号

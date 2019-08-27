@@ -5,13 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import y.y.yadmin.annotation.DataSource;
 import y.y.yadmin.module.test.dao.TpUserinfoMapper;
-import y.y.yadmin.module.test.model.TpUserInfo;
 import y.y.yadmin.module.test.service.ITpUserinfoService;
-
-import java.util.List;
 
 @Controller
 /*@RestController*/
@@ -30,12 +26,13 @@ public class testJdbcTemplates {
     }*/
 
     /**
-     * 两个都执行了事务
+     * 事务： 如果两个service 上面加事务 ，则第二个执行事务 不会影响第一个 只会执行其中一个
+     * 如果在controller层加上事务 ，则 数据源切换失效
      * @return
      */
     @RequestMapping("/testTpUserInfo")
     @ResponseBody
-    @Transactional
+    //@Transactional   如果这里开启了事务 ，则 数据源切换将没有作用  事务要在数据源切换之后
     public String testTpUserInfo(){
         tpUserinfoService.testInsert1();
         tpUserinfoService.testInsert2();
