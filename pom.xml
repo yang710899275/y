@@ -12,6 +12,7 @@
 
     <modules>
         <module>y-admin</module>
+        <module>y-core</module>
         <module>y-generator</module>
     </modules>
 
@@ -31,6 +32,7 @@
         <mybatis-plus.version>2.3</mybatis-plus.version>
         <commons-lang3.version>3.7</commons-lang3.version>
         <fastjson.version>1.2.47</fastjson.version>
+        <kafka.version>2.3.0</kafka.version>
     </properties>
 
     <dependencyManagement>
@@ -79,6 +81,18 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka_2.12</artifactId>
+                <version>${kafka.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
         </dependencies>
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package y.y.yadmin.config;
+package y.y.yadmin.config.swagger;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;

@@ -22,7 +22,7 @@
             <appender-ref ref="STDOUT"/>
         </root>
 
-        <logger name="com.example.docker1.docker1" level="debug" additivity="false">
+        <logger name="y.y.yadmin" level="debug" additivity="false">
             <appender-ref ref="STDOUT"/>
         </logger>
 
@@ -55,7 +55,7 @@
             <appender-ref ref="FILE_ALL"/>
         </root>
 
-        <logger name="com.example.docker1.docker1" level="info" additivity="false">
+        <logger name="y.y.yadmin" level="info" additivity="false">
             <appender-ref ref="FILE_ALL"/>
         </logger>
 
@@ -125,9 +125,19 @@
             <appender-ref ref="FILE_ALL"/>
         </root>
 
-        <logger name="com.example.docker1.docker1" level="info" additivity="false">
+        <logger name="y.y.yadmin" level="info" additivity="false">
             <appender-ref ref="FILE_ALL"/>
         </logger>
+
+        <appender name="KAFKA" class="y.y.yadmin.config.kafka.KafkaAppender">
+            <bootstrapServers>192.168.79.37:9092</bootstrapServers>
+        </appender>
+
+        <logger name="y.y.yadmin" level="info" additivity="false">
+            <appender-ref ref="FILE_ALL"/>
+            <appender-ref ref="KAFKA"/>
+        </logger>
+
 
     </springProfile>
 
