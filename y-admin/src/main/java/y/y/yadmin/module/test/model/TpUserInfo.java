@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 import static com.baomidou.mybatisplus.enums.IdType.INPUT;
@@ -21,10 +22,12 @@ public class TpUserInfo extends Model<TpUserInfo> {
      * 受理单号
      */
     @TableField("bus_code")
+    @NotNull(message = "busCode不能为空")
     private String busCode;
     /**
      * 名称
      */
+    @NotNull(message = "cn不能为空")
     private String cn;
     /**
      * 身份证号码
