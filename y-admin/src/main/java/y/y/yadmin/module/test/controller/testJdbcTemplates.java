@@ -14,6 +14,7 @@ import y.y.yadmin.annotation.DataSource;
 import y.y.yadmin.module.test.dao.TpUserinfoMapper;
 import y.y.yadmin.module.test.model.TpUserInfo;
 import y.y.yadmin.module.test.service.ITpUserinfoService;
+import y.y.yadmin.module.test.service.impl.TpUserinfoServiceImpl;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -24,10 +25,10 @@ import javax.validation.constraints.NotNull;
 public class testJdbcTemplates {
   /*  @Autowired
     private JdbcTemplate jdbcTemplate;*/
-    @Autowired
+   /* @Autowired
     private ITpUserinfoService tpUserinfoService;
     @Autowired
-    private TpUserinfoMapper tpUserinfoMapper;
+    private TpUserinfoMapper tpUserinfoMapper;*/
 
   /*  @RequestMapping("/testJdbc")
     private String test(){
@@ -44,7 +45,7 @@ public class testJdbcTemplates {
     @ResponseBody
     @Transactional   //如果这里开启了事务 ，则 数据源切换将没有作用  事务要在数据源切换之后
     public String testTpUserInfo(){
-        tpUserinfoService.testInsert1();
+        //tpUserinfoService.testInsert1();
         //tpUserinfoService.testInsert2();
        /* TpUserInfo t = new TpUserInfo();
         t.setId("1234567");
@@ -77,6 +78,16 @@ public class testJdbcTemplates {
   @ResponseBody
   public String testTpUserInfo2(@NotNull(message = "name不能为空") String name){
     System.out.println(name);
+    return "ss2";
+  }
+
+  @Autowired
+  private TpUserinfoServiceImpl tpUserinfoService;
+  @RequestMapping("/testMybatisplus3")
+  @ResponseBody
+  public String testMybatisplus3(@NotNull(message = "name不能为空") String name){
+    System.out.println(name);
+    tpUserinfoService.testInsert2();
     return "ss2";
   }
 }

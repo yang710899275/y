@@ -1,17 +1,23 @@
 y:
   muti-datasource:
-    open: true   #多数据源开关
+    open: false   #多数据源开关
 
 spring:
   profiles:
     active: @spring.active@
   datasource:
     db1:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://192.168.10.93:3306/gjj?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useOldAliasMetadataBehavior=true
-      username: gdca
-      password: gdca1234
-      dataSourceName: gjj
+#      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://192.168.10.93:3306/gjj?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useOldAliasMetadataBehavior=true
+#      username: gdca
+#      password: gdca1234
+#      dataSourceName: gjj
+
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@192.168.10.210:1521:orcl
+      username: GDCA_RA
+      password: GDCA_RA
+      dataSourceName: RA
 ---
 spring:
   datasource:

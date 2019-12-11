@@ -1,22 +1,24 @@
 package y.y.yadmin.module.test.model;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableName;
-import com.baomidou.mybatisplus.enums.IdType;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
+import lombok.ToString;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
-import static com.baomidou.mybatisplus.enums.IdType.INPUT;
-
 @TableName("tp_user_info")
+@Data
+@ToString
 public class TpUserInfo extends Model<TpUserInfo> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(type = IdType.ID_WORKER_STR)
+    @TableId(type = IdType.ASSIGN_ID)
     private String id;
     /**
      * 受理单号
@@ -51,87 +53,9 @@ public class TpUserInfo extends Model<TpUserInfo> {
      */
     private String status;
 
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getBusCode() {
-        return busCode;
-    }
-
-    public void setBusCode(String busCode) {
-        this.busCode = busCode;
-    }
-
-    public String getCn() {
-        return cn;
-    }
-
-    public void setCn(String cn) {
-        this.cn = cn;
-    }
-
-    public String getCardNo() {
-        return cardNo;
-    }
-
-    public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     @Override
     protected Serializable pkVal() {
         return this.id;
     }
 
-    @Override
-    public String toString() {
-        return "TpUserInfo{" +
-        "id=" + id +
-        ", busCode=" + busCode +
-        ", cn=" + cn +
-        ", cardNo=" + cardNo +
-        ", type=" + type +
-        ", mobile=" + mobile +
-        ", email=" + email +
-        ", status=" + status +
-        "}";
-    }
 }
