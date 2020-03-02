@@ -1,6 +1,6 @@
 package com.example.demo.service.impl;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo.dao.TpUserinfoMapper;
 import com.example.demo.model.TpUserInfo;
 import com.example.demo.service.ITpUserinfoService;
@@ -13,18 +13,17 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 
 @Service
-public class TpUserinfoServiceImpl extends ServiceImpl<TpUserinfoMapper, TpUserInfo>  implements ITpUserinfoService {
+public class TpUserinfoServiceImpl extends ServiceImpl<TpUserinfoMapper, TpUserInfo> implements ITpUserinfoService {
     @Autowired
     private TpUserinfoMapper tpUserinfoMapper;
 
     @Override
-    @Transactional
+    //@Transactional
     public void testInsert1() {
         TpUserInfo t = new TpUserInfo();
-        t.setBusCode("1231231328888888889999111");
+        t.setBusCode("123123132888888888999911122222");
         tpUserinfoMapper.insert(t);
         int i = 3/0 ;
     }
