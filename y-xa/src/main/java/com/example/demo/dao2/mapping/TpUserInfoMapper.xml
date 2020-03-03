@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.TpUserinfoMapper">
+<mapper namespace="com.example.demo.dao2.TpUserinfoMapper">
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.example.demo.model.TpUserInfo">
         <id column="id" property="id" />
@@ -17,7 +17,4 @@
         id, bus_code, cn, card_no, type, mobile, email, status
     </sql>
 
-    <insert id="insert2">
-        INSERT into tp_user_info(id,bus_code) values (#{id},#{busCode})
-    </insert>
 </mapper>

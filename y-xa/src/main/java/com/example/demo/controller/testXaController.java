@@ -48,7 +48,7 @@ public class testXaController {
             PreparedStatement positionStatement = positionConnection.prepareStatement(sql);
             positionStatement.execute();
             orderConnection = symbolOrder.getConnection();
-            sql = "insert into sys_user (id) values (1111)";
+            sql = "insert into sys_user (id) values (1112)";
             //sql = MessageFormat.format(sql,4,"000004.SZ",100,(float)5.5,"2017-07-27 14:31:00");
             PreparedStatement orderStatement = orderConnection.prepareStatement(sql);
             orderStatement.execute();
@@ -91,5 +91,17 @@ public class testXaController {
     public void testSingle2(){
 
         tpUserinfoService.testInsert2();
+    }
+
+
+    /**
+     * 事务在controller层
+     */
+    @RequestMapping("/testPackege")
+    @Transactional
+    public void testPackege(){
+
+        tpUserinfoService.testPackageInsert1();
+        tpUserinfoService.testPackageInsert2();
     }
 }

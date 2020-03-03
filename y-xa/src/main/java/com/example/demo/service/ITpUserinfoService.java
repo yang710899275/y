@@ -7,4 +7,8 @@ public interface ITpUserinfoService extends IService<TpUserInfo> {
      void testInsert1();
      void testInsert2();
      void ttt();
+
+     //xa分布式分包测试
+     void testPackageInsert1();
+     void testPackageInsert2();
 }
