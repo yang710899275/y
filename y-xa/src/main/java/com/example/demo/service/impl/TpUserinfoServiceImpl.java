@@ -95,6 +95,7 @@ public class TpUserinfoServiceImpl extends ServiceImpl<TpUserinfoMapper, TpUserI
         TpUserInfo t = new TpUserInfo();
         t.setId(IdWorker.get32UUID());
         t.setBusCode("123123132888888888999977777");
+        //自定义方法
         tpUserinfoMapper.insert2(t);
         //tpUserinfoMapper.insert(t);
     }
@@ -104,6 +105,28 @@ public class TpUserinfoServiceImpl extends ServiceImpl<TpUserinfoMapper, TpUserI
         System.out.println("package2");
         TpUserInfo t = new TpUserInfo();
         t.setBusCode("123123132888888888999977777");
+        tpUserinfoMapper2.insert(t);
+    }
+
+
+    @Override
+    @Transactional
+    public void testPackageInsert3() {
+        System.out.println("package3");
+        TpUserInfo t = new TpUserInfo();
+        t.setId(IdWorker.get32UUID());
+        t.setBusCode("12312313288888888899998888999");
+        //自定义方法
+        //tpUserinfoMapper.insert2(t);
+        tpUserinfoMapper.insert(t);
+        int i = 3 /0;
+    }
+
+    @Override
+    public void testPackageInsert4() {
+        System.out.println("package4");
+        TpUserInfo t = new TpUserInfo();
+        t.setBusCode("12312313288888888899998888");
         tpUserinfoMapper2.insert(t);
     }
 }

@@ -98,10 +98,20 @@ public class testXaController {
      * 事务在controller层
      */
     @RequestMapping("/testPackege")
-    @Transactional
     public void testPackege(){
 
         tpUserinfoService.testPackageInsert1();
         tpUserinfoService.testPackageInsert2();
+    }
+
+    /**
+     *
+     */
+    @RequestMapping("/testPackege2")
+    @Transactional
+    public void testPackege2(){
+
+        tpUserinfoService.testPackageInsert4();
+        tpUserinfoService.testPackageInsert3();
     }
 }

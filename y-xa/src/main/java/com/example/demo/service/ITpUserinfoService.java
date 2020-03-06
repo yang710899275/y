@@ -11,4 +11,8 @@ public interface ITpUserinfoService extends IService<TpUserInfo> {
      //xa分布式分包测试
      void testPackageInsert1();
      void testPackageInsert2();
+
+     //xa分布式分包测试（事务）
+     void testPackageInsert3();
+     void testPackageInsert4();
 }
